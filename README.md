@@ -1,7 +1,7 @@
 # COM-437-ANDROID-APP
 Elder Care Robot Companion:
 
-A mobile application linked to a robot designed to assist elderly patients at home. The AI can monitor health, provide medication reminders, notify caregivers of emergency situations, and offer companionship to reduce loneliness.
+A mobile application linked to a robot designed to assist elderly patients at home. The AI can monitor health, provide medication reminders, notify caregivers of emergencies, and offer companionship to reduce loneliness.
 Project Description
 
 The Elder Care Robot Companion is an Android application connected to a robot designed to assist elderly patients at home. The application aims to enhance the quality of life for elderly individuals by monitoring their health, providing medication reminders, assisting in emergencies, and offering companionship to reduce loneliness.
@@ -17,6 +17,7 @@ Platform
 The solution will be developed as an Android application using Java. The robot will be integrated using a robust communication protocol to ensure seamless interaction between the app and the robot.
 
 Front/Back End Support
+
 Frontend: Android application developed in Java.
 Backend: Node.js with Express.js for API development and MongoDB for data storage.
 AI Integration: Python for developing health monitoring algorithms and the companion chat feature.
