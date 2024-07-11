@@ -1,4 +1,4 @@
-# COM-437-ANDROID-APP
+# COM-437-ANDROID-APP- Elder Care Robot Companion
 Elder Care Robot Companion:
 
 A mobile application linked to a robot designed to assist elderly patients at home. The AI can monitor health, provide medication reminders, notify caregivers of emergencies, and offer companionship to reduce loneliness.
