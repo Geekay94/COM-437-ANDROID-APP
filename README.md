@@ -43,3 +43,9 @@ Companion Chat:
 Conversational AI to engage users in meaningful conversations.
 Personalized interaction based on user preferences and history.
 Emotional support through virtual companionship.
+
+
+ Pill Dispensing System
+ 
+
+ 
