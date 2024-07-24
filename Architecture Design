@@ -1,0 +1,116 @@
+ Architecture Design
+
+The system architecture consists of the following components:
+1. Android Application
+2. Backend Server
+3. Robot with Integrated Sensors
+4. Communication Protocol
+
+[plantuml]
+@startuml
+!define RECTANGLE class
+RECTANGLE AndroidApplication {
+    - Java
+    - User Interface
+    - Health Metrics Display
+    - Medication Reminder Notifications
+    - Emergency Alert Button
+    - Companion Chat Interface
+}
+
+RECTANGLE BackendServer {
+    - Node.js
+    - Express.js
+    - MongoDB
+    - REST API
+    - Data Storage
+}
+
+RECTANGLE Robot {
+    - Sensors (Heart Rate, Blood Pressure)
+    - MQTT Protocol
+    - Emergency Detection
+    - Health Data Transmission
+}
+
+RECTANGLE CommunicationProtocol {
+    - MQTT for real-time communication
+    - REST API for backend interaction
+}
+
+AndroidApplication --> BackendServer : REST API
+BackendServer --> Robot : MQTT Protocol
+Robot --> AndroidApplication : Health Data, Emergency Alerts
+@enduml
+
+=== Database Schema
+
+The MongoDB database will include the following collections:
+
+==== Users
+|===
+| Field          | Type     | Description
+| ---            | ---      | ---
+| user_id        | ObjectId | Unique identifier for each user
+| name           | String   | Name of the user
+| age            | Number   | Age of the user
+| medical_history| Array    | List of medical conditions
+| medication_schedule | Array | List of medications with timings
+|===
+
+==== HealthMetrics
+|===
+| Field          | Type     | Description
+| ---            | ---      | ---
+| metric_id      | ObjectId | Unique identifier for each metric
+| user_id        | ObjectId | Reference to Users collection
+| timestamp      | Date     | Date and time of the metric recording
+| heart_rate     | Number   | Heart rate value
+| blood_pressure | String   | Blood pressure reading
+|===
+
+==== EmergencyAlerts
+|===
+| Field          | Type     | Description
+| ---            | ---      | ---
+| alert_id       | ObjectId | Unique identifier for each alert
+| user_id        | ObjectId | Reference to Users collection
+| timestamp      | Date     | Date and time of the alert
+| alert_type     | String   | Type of alert (e.g., fall detected, abnormal health reading)
+| status         | String   | Status of the alert (e.g., pending, resolved)
+|===
+
+=== Algorithms
+
+The following algorithms will be implemented:
+
+==== Health Monitoring
+1. Continuous data collection from sensors.
+2. Threshold-based alerts for abnormal readings.
+3. Historical data analysis for trend detection.
+
+==== Medication Management
+1. Schedule-based push notifications.
+2. User confirmation prompts for medication intake.
+
+==== Emergency Detection
+1. Real-time analysis of sensor data.
+2. Immediate alert generation for critical conditions.
+3. Automated notifications to caregivers.
+
+==== Companion Chat
+1. Natural Language Processing (NLP) for conversation.
+2. Personalized responses based on user preferences and history.
+3. Multi-language support using pre-trained language models.
+
+=== Communication Protocol
+
+The MQTT protocol will be used for real-time communication between the robot and the mobile application. The REST API will be used for backend interactions to fetch and store data.
+
+1. MQTT:
+   * Lightweight messaging protocol ideal for IoT devices.
+   * Ensures real-time communication for health monitoring and emergency alerts.
+
+2. REST API:
+   * Provides endpoints for data access and management.
+   * Ensures secure and scalable interactions between the mobile app and the backend server.
