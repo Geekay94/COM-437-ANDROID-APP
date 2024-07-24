@@ -1,4 +1,0 @@
-mkdir elder-care-backend
-cd elder-care-backend
-npm init -y
-npm install express mongoose body-parser
