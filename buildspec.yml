@@ -1,0 +1,24 @@
+version: 0.2
+
+phases:
+  install:
+    commands:
+      - echo Installing dependencies...
+      - echo Dependencies installation can go here
+  pre_build:
+    commands:
+      - echo Preparing the build environment...
+  build:
+    commands:
+      - echo Hello, world!
+      - echo "Running a one-line script"
+      - |
+        echo Add other tasks to build, test, and deploy your project.
+        echo See https://docs.aws.amazon.com/codebuild/latest/userguide/build-spec-ref.html
+  post_build:
+    commands:
+      - echo Build phase completed.
+artifacts:
+  files:
+    - '**/*'  # Include all files generated during the build
+  discard-paths: yes
